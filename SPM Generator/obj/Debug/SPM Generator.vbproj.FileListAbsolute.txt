@@ -1,0 +1,137 @@
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\SPM Generator.exe.config
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\SPM Generator.exe
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\SPM Generator.pdb
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\SPM Generator.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.Desktop.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Drawing.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Printing.v24.1.Core.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Utils.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraBars.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraEditors.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraGrid.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraLayout.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraPrinting.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Core.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Drawing.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Sparkline.v24.1.Core.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.dll
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.Desktop.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Drawing.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Printing.v24.1.Core.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Utils.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraBars.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraEditors.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraGrid.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraLayout.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraPrinting.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Core.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Drawing.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Sparkline.v24.1.Core.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM Generator.vbprojResolveAssemblyReference.cache
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.Form1.resources
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.MenuUtama.resources
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.Resources.resources
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM Generator.vbproj.GenerateResource.Cache
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM Generator.exe.licenses
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM Generator.exe
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM Generator.xml
+c:\users\sitp\documents\visual studio 2017\Projects\SPM Generator\SPM Generator\obj\Debug\SPM Generator.pdb
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\SPM Generator.exe.config
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\SPM Generator.exe
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\SPM Generator.pdb
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\SPM Generator.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.Desktop.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Drawing.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Printing.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Utils.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraBars.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraEditors.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraGrid.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraLayout.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraPrinting.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Drawing.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Sparkline.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.Desktop.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Data.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Drawing.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Printing.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Utils.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraBars.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraEditors.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraGrid.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraLayout.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraPrinting.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Drawing.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Sparkline.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM Generator.vbprojResolveAssemblyReference.cache
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.Form1.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.Resources.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM Generator.vbproj.GenerateResource.Cache
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM Generator.exe.licenses
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM Generator.exe
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM Generator.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM Generator.pdb
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.HasilForm.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator\SPM Generator\obj\Debug\SPM_Generator.MenuUtamaForm.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\SPM Generator.exe.config
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\SPM Generator.exe
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\SPM Generator.pdb
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\SPM Generator.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Data.Desktop.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Data.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Drawing.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Printing.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Utils.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraBars.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraEditors.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraGrid.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraLayout.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraPrinting.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Drawing.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Sparkline.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.dll
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Data.Desktop.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Data.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Drawing.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Printing.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Utils.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraBars.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraEditors.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraGrid.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraLayout.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraPrinting.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Pdf.v24.1.Drawing.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Sparkline.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM Generator.vbprojResolveAssemblyReference.cache
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM_Generator.Form1.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM_Generator.HasilForm.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM_Generator.MenuUtamaForm.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM_Generator.Resources.resources
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM Generator.vbproj.GenerateResource.Cache
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM Generator.exe.licenses
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM Generator.exe
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM Generator.xml
+D:\Project Transporter\SPM Pamekasan\SPM Generator - Copy\SPM Generator\obj\Debug\SPM Generator.pdb
