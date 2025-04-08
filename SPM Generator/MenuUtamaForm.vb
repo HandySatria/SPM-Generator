@@ -41,6 +41,7 @@ Public Class MenuUtamaForm
         paus.maks_iterasi = 100
         dt_hasil = paus.proses
         Dim childfm = New HasilForm
+        dt_hasil.DefaultView.Sort = "PAUS ASC"
         childfm.GridControl1.DataSource = dt_hasil
         childfm.BarHeaderUjsMinimum.Caption = $"gbest = {paus.total_ujs_gbest}"
         childfm.ShowDialog()
@@ -49,11 +50,11 @@ Public Class MenuUtamaForm
 
     Private Sub MenuUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn = Koneksi()
-        Dim cmd As New OleDbCommand("select * from m_ujs", conn)
+        Dim cmd As New OleDbCommand("SELECT * FROM m_ujs WHERE m_ujs.id IN ( SELECT MAX(id) FROM m_ujs GROUP BY asal, tujuan)", conn)
         Dim rd As OleDbDataReader
         Dim dt As New DataTable
         dt_ujs = New DataTable
-        rd = cmd.ExecuteReader
+        rd = cmd.ExecuteReader()
         dt_ujs.Load(rd)
     End Sub
 

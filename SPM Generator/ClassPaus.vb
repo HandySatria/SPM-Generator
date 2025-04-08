@@ -176,23 +176,8 @@
                                     End If
                                     kapasitas_ujs = kapasitas_ujs * 25
                                 End If
-
-                                If qty >= 175 Then
-                                    ujs_per_rute(i, rute_ke, k) = dr(0)("200")
-                                    ujs_per_rit(i, rute_ke) += dr(0)("200")
-                                ElseIf qty >= 125 Then
-                                    ujs_per_rute(i, rute_ke, k) = dr(0)("150")
-                                    ujs_per_rit(i, rute_ke) += dr(0)("150")
-                                ElseIf qty >= 75 Then
-                                    ujs_per_rute(i, rute_ke, k) = dr(0)("100")
-                                    ujs_per_rit(i, rute_ke) += dr(0)("100")
-                                ElseIf qty >= 25 Then
-                                    ujs_per_rute(i, rute_ke, k) = dr(0)("50")
-                                    ujs_per_rit(i, rute_ke) += dr(0)("50")
-                                Else
-                                    ujs_per_rute(i, rute_ke, k) = dr(0)("0")
-                                    ujs_per_rit(i, rute_ke) += dr(0)("0")
-                                End If
+                                ujs_per_rute(i, rute_ke, k) = dr(0)(kapasitas_ujs.ToString)
+                                ujs_per_rit(i, rute_ke) += dr(0)(kapasitas_ujs.ToString)
                                 jarak_per_rute(i, rute_ke, k) = dr(0)("Jarak")
                                 jarak_per_rit(i, rute_ke) += dr(0)("Jarak")
                             End If
@@ -311,6 +296,7 @@
         dt_hasil.Columns.Add("NO")
         dt_hasil.Columns.Add("ORDER DATE")
         dt_hasil.Columns.Add("KODE TOKO")
+        dt_hasil.Columns.Add("NAMA TOKO")
         dt_hasil.Columns.Add("CEMENT")
         dt_hasil.Columns.Add("SDO NO")
         dt_hasil.Columns.Add("QTY")
@@ -421,6 +407,7 @@
                         dr_hasil("RUTE") = rute_ke
                         dr_hasil("ORDER DATE") = dt(gbest_urutan(k))("ORDER DATE")
                         dr_hasil("KODE TOKO") = dt(gbest_urutan(k))("KODE TOKO")
+                        dr_hasil("NAMA TOKO") = dt(gbest_urutan(k))("NAMA TOKO")
                         dr_hasil("CEMENT") = dt(gbest_urutan(k))("CEMENT")
                         dr_hasil("SDO NO") = dt(gbest_urutan(k))("SDO NO")
                         dr_hasil("QTY") = dt(gbest_urutan(k))("QTY")
@@ -445,6 +432,7 @@
                     dr_hasil("RUTE") = rute_ke
                     dr_hasil("ORDER DATE") = ""
                     dr_hasil("KODE TOKO") = ""
+                    dr_hasil("NAMA TOKO") = ""
                     dr_hasil("CEMENT") = ""
                     dr_hasil("SDO NO") = ""
                     dr_hasil("QTY") = 0

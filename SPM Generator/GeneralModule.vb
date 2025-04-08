@@ -5,7 +5,7 @@ Module GeneralModule
     Dim cmd As OleDbCommand
     Dim dr As OleDbDataReader
     Public Function Koneksi()
-        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=db_spm_generator.accdb")
+        Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.16.0;Data Source=db_spm_generator.accdb")
         conn.Open()
         Return conn
     End Function

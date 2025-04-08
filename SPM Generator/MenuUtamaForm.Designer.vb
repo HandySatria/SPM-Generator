@@ -35,6 +35,7 @@ Partial Class MenuUtamaForm
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,9 +49,9 @@ Partial Class MenuUtamaForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonImport, Me.BarButtonProses, Me.BarButtonNormalisasi, Me.BarButtonPermutasi})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonImport, Me.BarButtonProses, Me.BarButtonNormalisasi, Me.BarButtonPermutasi, Me.BarButtonItem1})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 4
+        Me.BarManager1.MaxItemId = 5
         Me.BarManager1.StatusBar = Me.Bar3
         '
         'Bar2
@@ -59,7 +60,7 @@ Partial Class MenuUtamaForm
         Me.Bar2.DockCol = 0
         Me.Bar2.DockRow = 0
         Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonImport), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonNormalisasi), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonProses), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonPermutasi)})
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonImport), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonNormalisasi), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonProses), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonPermutasi), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem1)})
         Me.Bar2.OptionsBar.MultiLine = True
         Me.Bar2.OptionsBar.UseWholeRow = True
         Me.Bar2.Text = "Main menu"
@@ -161,6 +162,12 @@ Partial Class MenuUtamaForm
         Me.ProgressBar1.Size = New System.Drawing.Size(1232, 17)
         Me.ProgressBar1.TabIndex = 9
         '
+        'BarButtonItem1
+        '
+        Me.BarButtonItem1.Caption = "Truck Standby"
+        Me.BarButtonItem1.Id = 4
+        Me.BarButtonItem1.Name = "BarButtonItem1"
+        '
         'MenuUtamaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 19.0!)
@@ -198,4 +205,5 @@ Partial Class MenuUtamaForm
     Friend WithEvents BarButtonNormalisasi As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonPermutasi As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
 End Class

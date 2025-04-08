@@ -23,6 +23,8 @@ Partial Class HasilForm
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarHeaderUjsMinimum = New DevExpress.XtraBars.BarHeaderItem()
+        Me.BarHeaderItemExport = New DevExpress.XtraBars.BarHeaderItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
@@ -30,15 +32,14 @@ Partial Class HasilForm
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.RepositoryItemHypertextLabel1 = New DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.RepositoryItemHypertextLabel1 = New DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel()
-        Me.BarHeaderUjsMinimum = New DevExpress.XtraBars.BarHeaderItem()
-        Me.BarHeaderItem2 = New DevExpress.XtraBars.BarHeaderItem()
+        Me.BarButtonGenerate = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemHypertextLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemHypertextLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarManager1
@@ -49,9 +50,9 @@ Partial Class HasilForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarHeaderUjsMinimum, Me.BarHeaderItem2})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem1, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarHeaderUjsMinimum, Me.BarHeaderItemExport, Me.BarButtonGenerate})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 7
+        Me.BarManager1.MaxItemId = 8
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemHypertextLabel1})
         Me.BarManager1.StatusBar = Me.Bar3
         '
@@ -62,7 +63,7 @@ Partial Class HasilForm
         Me.Bar2.DockRow = 0
         Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.Bar2.FloatLocation = New System.Drawing.Point(71, 223)
-        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BarHeaderUjsMinimum), New DevExpress.XtraBars.LinkPersistInfo(Me.BarHeaderItem2)})
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BarHeaderUjsMinimum), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonGenerate)})
         Me.Bar2.OptionsBar.MultiLine = True
         Me.Bar2.OptionsBar.UseWholeRow = True
         Me.Bar2.Text = "Main menu"
@@ -72,6 +73,18 @@ Partial Class HasilForm
         Me.BarButtonItem3.Caption = "Close"
         Me.BarButtonItem3.Id = 2
         Me.BarButtonItem3.Name = "BarButtonItem3"
+        '
+        'BarHeaderUjsMinimum
+        '
+        Me.BarHeaderUjsMinimum.Caption = "Ujs Minimum :"
+        Me.BarHeaderUjsMinimum.Id = 5
+        Me.BarHeaderUjsMinimum.Name = "BarHeaderUjsMinimum"
+        '
+        'BarHeaderItemExport
+        '
+        Me.BarHeaderItemExport.Caption = "Generate"
+        Me.BarHeaderItemExport.Id = 6
+        Me.BarHeaderItemExport.Name = "BarHeaderItemExport"
         '
         'Bar3
         '
@@ -129,6 +142,10 @@ Partial Class HasilForm
         Me.BarButtonItem2.Id = 1
         Me.BarButtonItem2.Name = "BarButtonItem2"
         '
+        'RepositoryItemHypertextLabel1
+        '
+        Me.RepositoryItemHypertextLabel1.Name = "RepositoryItemHypertextLabel1"
+        '
         'GridControl1
         '
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -145,21 +162,11 @@ Partial Class HasilForm
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         '
-        'RepositoryItemHypertextLabel1
+        'BarButtonGenerate
         '
-        Me.RepositoryItemHypertextLabel1.Name = "RepositoryItemHypertextLabel1"
-        '
-        'BarHeaderUjsMinimum
-        '
-        Me.BarHeaderUjsMinimum.Caption = "Ujs Minimum :"
-        Me.BarHeaderUjsMinimum.Id = 5
-        Me.BarHeaderUjsMinimum.Name = "BarHeaderUjsMinimum"
-        '
-        'BarHeaderItem2
-        '
-        Me.BarHeaderItem2.Caption = "      BarHeaderItem2"
-        Me.BarHeaderItem2.Id = 6
-        Me.BarHeaderItem2.Name = "BarHeaderItem2"
+        Me.BarButtonGenerate.Caption = "Generate SPM"
+        Me.BarButtonGenerate.Id = 7
+        Me.BarButtonGenerate.Name = "BarButtonGenerate"
         '
         'HasilForm
         '
@@ -174,9 +181,9 @@ Partial Class HasilForm
         Me.Name = "HasilForm"
         Me.Text = "HasilForm"
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemHypertextLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemHypertextLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -195,6 +202,7 @@ Partial Class HasilForm
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarHeaderUjsMinimum As DevExpress.XtraBars.BarHeaderItem
-    Friend WithEvents BarHeaderItem2 As DevExpress.XtraBars.BarHeaderItem
+    Friend WithEvents BarHeaderItemExport As DevExpress.XtraBars.BarHeaderItem
     Friend WithEvents RepositoryItemHypertextLabel1 As DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel
+    Friend WithEvents BarButtonGenerate As DevExpress.XtraBars.BarButtonItem
 End Class
