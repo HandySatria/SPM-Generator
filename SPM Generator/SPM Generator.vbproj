@@ -83,26 +83,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassPaus.vb" />
-    <Compile Include="ClassPermutasi.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Classes\ClassPaus.vb" />
+    <Compile Include="Classes\ClassPermutasi.vb" />
+    <Compile Include="Forms\TrukStandbyForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\TrukStandbyForm.Designer.vb">
+      <DependentUpon>TrukStandbyForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeneralModule.vb" />
-    <Compile Include="HasilForm.Designer.vb">
+    <Compile Include="Modules\GeneralModule.vb" />
+    <Compile Include="Forms\HasilForm.Designer.vb">
       <DependentUpon>HasilForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="HasilForm.vb">
+    <Compile Include="Forms\HasilForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuUtamaForm.Designer.vb">
+    <Compile Include="Forms\MenuUtamaForm.Designer.vb">
       <DependentUpon>MenuUtamaForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MenuUtamaForm.vb">
+    <Compile Include="Forms\MenuUtamaForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -122,13 +122,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\TrukStandbyForm.resx">
+      <DependentUpon>TrukStandbyForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HasilForm.resx">
+    <EmbeddedResource Include="Forms\HasilForm.resx">
       <DependentUpon>HasilForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuUtamaForm.resx">
+    <EmbeddedResource Include="Forms\MenuUtamaForm.resx">
       <DependentUpon>MenuUtamaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />

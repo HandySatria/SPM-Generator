@@ -194,7 +194,6 @@
                         qty = qty - CInt(dt(paus_urutan(i, index_awal))("QTY"))
                     End If
 
-
                     ''kosongan kembali ke gudang
                     dr = dt_ujs.Select($"Asal = '{dt(paus_urutan(i, index_akhir))("DESA")}' and Tujuan = 'Pamekasan-Gudang Pamekasan-'")
                     If dr.Count > 0 Then
@@ -413,14 +412,20 @@
                         dr_hasil("QTY") = dt(gbest_urutan(k))("QTY")
                         dr_hasil("DESA") = dt(gbest_urutan(k))("DESA")
                         dr_hasil("TOTAL QTY") = actual_qty
-                        dr_hasil("ASAL") = ""
-                        dr_hasil("TUJUAN") = ""
                         dr_hasil("JARAK") = jarak_per_rute(i, rute_ke, k)
                         dr_hasil("UJS") = ujs_per_rute(i, rute_ke, k)
                         dr_hasil("SUM JARAK") = jarak_per_rit(i, rute_ke)
                         dr_hasil("SUM UJS") = ujs_per_rit(i, rute_ke)
                         dr_hasil("TAMBAHAN MULTITRIP") = tambahan_multi_trip
                         dr_hasil("TOTAL UJS") = total_ujs_per_rit(i, rute_ke)
+
+                        If k = index_awal Then
+                            dr_hasil("ASAL") = "Pamekasan-Gudang Pamekasan-"
+                            dr_hasil("TUJUAN") = dt(gbest_urutan(k))("DESA")
+                        Else
+                            dr_hasil("ASAL") = dt(gbest_urutan(k - 1))("DESA")
+                            dr_hasil("TUJUAN") = dt(gbest_urutan(k))("DESA")
+                        End If
 
                         dt_hasil.Rows.InsertAt(dr_hasil, 0)
                     Next
@@ -438,8 +443,8 @@
                     dr_hasil("QTY") = 0
                     dr_hasil("DESA") = dt(gbest_urutan(index_akhir))("DESA")
                     dr_hasil("TOTAL QTY") = actual_qty
-                    dr_hasil("ASAL") = ""
-                    dr_hasil("TUJUAN") = ""
+                    dr_hasil("ASAL") = dt(gbest_urutan(index_akhir))("DESA")
+                    dr_hasil("TUJUAN") = "Pamekasan-Gudang Pamekasan-"
                     dr_hasil("JARAK") = jarak_per_rute(i, rute_ke, j)
                     dr_hasil("UJS") = ujs_per_rute(i, rute_ke, j)
                     dr_hasil("SUM JARAK") = jarak_per_rit(i, rute_ke)
@@ -516,7 +521,6 @@
                 Next
             End If
         End If
-
     End Sub
 
     Private Function menghitung_mutlak_A(iterasi As Integer, maks_iterasi As Integer, ByRef A() As Double, ByRef C() As Double)

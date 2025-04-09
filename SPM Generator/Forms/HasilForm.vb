@@ -27,7 +27,6 @@ Public Class HasilForm
                 Dim tanggal_order As String = ""
                 Dim customer As String = ""
                 Dim sdo_no As String = ""
-                Dim tanggal As String
                 With ExcelSheet1
                     If (index_akhir - index_awal) > 1 Then
                         ''Multitrip
