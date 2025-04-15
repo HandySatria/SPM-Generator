@@ -8,9 +8,12 @@ Public Class MenuUtamaForm
     Dim dt_ujs As DataTable
     Dim dt_list_do As DataTable
     Dim dt_hasil As DataTable
+    Dim ds_hasil As DataSet
     Dim dt_list_truk_standby As DataTable
-    Dim max_qty As Integer = 230
-
+    Dim dt_optimalisasi As DataTable
+    Dim list_kapasitas_truk As List(Of Integer)
+    Dim list_kapasitas_truk_default As List(Of Integer)
+    ''Dim max_qty As Integer = 230
 
     Private Sub BarButtonImport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonImport.ItemClick
         OpenFileDialog1.Filter = "Excel files (*.xlsx)|*.xlsx|CSV Files (*.csv)|*.csv|XLS Files (*.xls)|*xls"
@@ -34,25 +37,40 @@ Public Class MenuUtamaForm
         End If
     End Sub
 
-
     Private Sub BarButtonProses_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonProses.ItemClick
+
+        If GridView1.RowCount = 0 Then
+            MessageBox.Show("Harap Import data DO terlebih dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        If list_kapasitas_truk.Count = 0 Then
+            MessageBox.Show("Harap masukan data Truck Standby terlebih dahulu!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
         Dim paus As New ClassPaus
         paus.dt = dt_list_do
         paus.dt_ujs = dt_ujs
-        paus.max_qty = 230
-        paus.banyak_paus = 500
+        paus.dt_list_truk_standby = dt_list_truk_standby
+        paus.list_kapasitas_truk = list_kapasitas_truk
+        'paus.list_kapasitas_truk_default = list_kapasitas_truk_default
+        paus.banyak_paus = 200
         paus.maks_iterasi = 100
         dt_hasil = paus.proses
+        dt_optimalisasi = paus.dt_optimalisasi
+        ds_hasil = New DataSet
+        ds_hasil.Tables.Add(dt_hasil)
+        ds_hasil.Tables.Add(dt_optimalisasi)
+
         Dim childfm = New HasilForm
         dt_hasil.DefaultView.Sort = "PAUS ASC"
         childfm.GridControl1.DataSource = dt_hasil
         childfm.BarHeaderUjsMinimum.Caption = $"gbest = {paus.total_ujs_gbest}"
         childfm.GridView1.BestFitColumns()
         childfm.GridView1.Columns("PAUS").Visible = False
-
         childfm.Show()
     End Sub
-
 
     Private Sub MenuUtama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conn = Koneksi()
@@ -63,12 +81,24 @@ Public Class MenuUtamaForm
         rd = cmd.ExecuteReader()
         dt_ujs.Load(rd)
 
-        conn = Koneksi()
-        cmd = New OleDbCommand("SELECT [Jenis Truk], [Max Qty] FROM m_tipetruck ", conn)
         dt_list_truk_standby = New DataTable
-        rd = cmd.ExecuteReader()
-        dt_list_truk_standby.Load(rd)
+        'conn = Koneksi()
+        'cmd = New OleDbCommand("SELECT [Jenis Truk], [Max Qty] FROM m_tipetruck ", conn)
+        'rd = cmd.ExecuteReader()
+        'dt_list_truk_standby.Load(rd)
+        dt_list_truk_standby.Columns.Add("Jenis Truk")
+        dt_list_truk_standby.Columns.Add("Max Qty")
         dt_list_truk_standby.Columns.Add("Jumlah Standby")
+
+        list_kapasitas_truk = New List(Of Integer)
+        'list_kapasitas_truk_default = New List(Of Integer)
+        'If dt_list_truk_standby.Rows.Count > 0 Then
+        '    For i = 0 To dt_list_truk_standby.Rows.Count - 1
+        '        Dim a As Integer = dt_list_truk_standby(i)("Max Qty")
+        '        list_kapasitas_truk.Add(a)
+        '        list_kapasitas_truk_default.Add(a)
+        '    Next
+        'End If
 
     End Sub
 
@@ -110,24 +140,28 @@ Public Class MenuUtamaForm
     '    dt_list_do.AcceptChanges()
     'End Sub
 
-    Private Sub BarButtonPermutasi_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonPermutasi.ItemClick
-        Dim permutasi As New ClassPermutasi
-        permutasi.dt = dt_list_do
-        permutasi.dt_ujs = dt_ujs
-        permutasi.max_qty = 230
-        dt_hasil = permutasi.proses
-        Dim childfm = New HasilForm
-        childfm.GridControl1.DataSource = dt_hasil
-        childfm.BarHeaderUjsMinimum.Caption = $"gbest = {permutasi.total_ujs_gbest}"
-        childfm.ShowDialog()
-    End Sub
+    'Private Sub BarButtonPermutasi_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonPermutasi.ItemClick
+    '    Dim permutasi As New ClassPermutasi
+    '    permutasi.dt = dt_list_do
+    '    permutasi.dt_ujs = dt_ujs
+    '    permutasi.max_qty = 230
+    '    dt_hasil = permutasi.proses
+    '    Dim childfm = New HasilForm
+    '    childfm.GridControl1.DataSource = dt_hasil
+    '    childfm.BarHeaderUjsMinimum.Caption = $"gbest = {permutasi.total_ujs_gbest}"
+    '    childfm.ShowDialog()
+    'End Sub
 
     Private Sub BarButtonTruckStandby_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonTruckStandby.ItemClick
-
         Dim childfm As New TrukStandbyForm(dt_list_truk_standby)
-
         childfm.ShowDialog()
-
+        If childfm.DialogResult = DialogResult.OK Then
+            dt_list_truk_standby = childfm.dt
+            If childfm.list_kapasitas_truk.Count > 0 Then
+                list_kapasitas_truk = childfm.list_kapasitas_truk
+                list_kapasitas_truk_default = childfm.list_kapasitas_truk_default
+            End If
+        End If
     End Sub
 
 End Class

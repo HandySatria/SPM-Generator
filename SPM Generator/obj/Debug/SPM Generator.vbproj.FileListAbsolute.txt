@@ -171,8 +171,10 @@ D:\SITP\SPM Generator\SPM-Generator\SPM Generator\bin\Debug\DevExpress.Sparkline
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\bin\Debug\DevExpress.RichEdit.v24.1.Core.xml
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\bin\Debug\DevExpress.XtraTreeList.v24.1.xml
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\bin\Debug\DevExpress.Office.v24.1.Core.xml
+D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.vbprojResolveAssemblyReference.cache
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\Interop.Microsoft.Office.Core.dll
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.vbproj.ResolveComReference.cache
+D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM_Generator.TrukStandbyForm.resources
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM_Generator.HasilForm.resources
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM_Generator.MenuUtamaForm.resources
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM_Generator.Resources.resources
@@ -181,5 +183,3 @@ D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.exe.li
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.exe
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.xml
 D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.pdb
-D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM Generator.vbprojResolveAssemblyReference.cache
-D:\SITP\SPM Generator\SPM-Generator\SPM Generator\obj\Debug\SPM_Generator.TrukStandbyForm.resources

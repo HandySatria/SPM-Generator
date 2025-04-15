@@ -23,9 +23,7 @@ Partial Class MenuUtamaForm
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar2 = New DevExpress.XtraBars.Bar()
         Me.BarButtonImport = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonNormalisasi = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonProses = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonPermutasi = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonTruckStandby = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -49,7 +47,7 @@ Partial Class MenuUtamaForm
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonImport, Me.BarButtonProses, Me.BarButtonNormalisasi, Me.BarButtonPermutasi, Me.BarButtonTruckStandby})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonImport, Me.BarButtonProses, Me.BarButtonTruckStandby})
         Me.BarManager1.MainMenu = Me.Bar2
         Me.BarManager1.MaxItemId = 5
         Me.BarManager1.StatusBar = Me.Bar3
@@ -60,7 +58,7 @@ Partial Class MenuUtamaForm
         Me.Bar2.DockCol = 0
         Me.Bar2.DockRow = 0
         Me.Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonImport), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonNormalisasi), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonProses), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonPermutasi), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonTruckStandby)})
+        Me.Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonImport), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonTruckStandby), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonProses)})
         Me.Bar2.OptionsBar.MultiLine = True
         Me.Bar2.OptionsBar.UseWholeRow = True
         Me.Bar2.Text = "Main menu"
@@ -71,23 +69,11 @@ Partial Class MenuUtamaForm
         Me.BarButtonImport.Id = 0
         Me.BarButtonImport.Name = "BarButtonImport"
         '
-        'BarButtonNormalisasi
-        '
-        Me.BarButtonNormalisasi.Caption = "Normalisasi"
-        Me.BarButtonNormalisasi.Id = 2
-        Me.BarButtonNormalisasi.Name = "BarButtonNormalisasi"
-        '
         'BarButtonProses
         '
         Me.BarButtonProses.Caption = "Proses"
         Me.BarButtonProses.Id = 1
         Me.BarButtonProses.Name = "BarButtonProses"
-        '
-        'BarButtonPermutasi
-        '
-        Me.BarButtonPermutasi.Caption = "Permutasi"
-        Me.BarButtonPermutasi.Id = 3
-        Me.BarButtonPermutasi.Name = "BarButtonPermutasi"
         '
         'BarButtonTruckStandby
         '
@@ -203,8 +189,6 @@ Partial Class MenuUtamaForm
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents BarButtonProses As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonNormalisasi As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents BarButtonPermutasi As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents BarButtonTruckStandby As DevExpress.XtraBars.BarButtonItem
 End Class

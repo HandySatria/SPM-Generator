@@ -2,10 +2,16 @@
     Public dt As DataTable
     Public dt_hasil As DataTable
     Public dt_ujs As DataTable
+    Public dt_optimalisasi As DataTable
+    Public dt_list_truk_standby As DataTable
     Public max_qty As Integer
     Public banyak_paus As Integer
     Public maks_iterasi As Integer
     Public total_ujs_gbest As Double = 0
+    Public list_kapasitas_truk As New List(Of Integer)
+    Dim list_kapasitas_truk_copy As New List(Of Integer)
+    Dim list_kapasitas_truk_long As New List(Of Integer)
+    Public list_kapasitas_truk_gbest As New List(Of Integer)
     Dim beta As Integer = 0.5
 
     Public Function proses()
@@ -25,15 +31,23 @@
         Dim ujs_per_rit(banyak_paus, dt.Rows.Count) As Double
         Dim ujs_per_rute(banyak_paus, dt.Rows.Count, dt.Rows.Count) As Double
         Dim total_ujs_per_rit(banyak_paus, dt.Rows.Count) As Double
+        Dim arr_kapasitas_truk(banyak_paus, dt.Rows.Count) As Double
+
+        For i = 0 To list_kapasitas_truk.Count - 1
+            list_kapasitas_truk_copy.Add(list_kapasitas_truk(i))
+        Next
+
+        ''Inisialisasi kolom pada tabel optimalisasi
+        inisialisasi_tabel_optimalisasi()
 
         '' Generate populasi awal
         generate_bil_random(banyak_paus, paus)
 
         ''evaluasi fungsi tujuan
-        evaluasi_fungsi_tujuan(banyak_paus, paus, paus_urutan, jarak_per_rute, jarak_per_rit, ujs_per_rute, ujs_per_rit, total_ujs_per_rit)
+        evaluasi_fungsi_tujuan(banyak_paus, paus, paus_urutan, jarak_per_rute, jarak_per_rit, ujs_per_rute, ujs_per_rit, total_ujs_per_rit, arr_kapasitas_truk)
 
         '' menentukan nilai pbest
-        menentukan_nilai_pbest(banyak_paus, paus, paus_urutan, total_ujs_per_rit, index_pbest, pbest, paus_terbaik, p, gbest, gbest_urutan, total_ujs_gbest)
+        menentukan_nilai_pbest(banyak_paus, paus, paus_urutan, total_ujs_per_rit, index_pbest, pbest, paus_terbaik, p, gbest, gbest_urutan, total_ujs_gbest, 0, arr_kapasitas_truk)
 
         '' Tahap Migrasi
         MenuUtamaForm.ProgressBar1.Maximum = maks_iterasi
@@ -51,9 +65,9 @@
                     menyerang_mangsa_dengan_gelembung(i, gbest, paus)
                 End If
             Next
-            evaluasi_fungsi_tujuan(banyak_paus, paus, paus_urutan, jarak_per_rute, jarak_per_rit, ujs_per_rute, ujs_per_rit, total_ujs_per_rit)
+            evaluasi_fungsi_tujuan(banyak_paus, paus, paus_urutan, jarak_per_rute, jarak_per_rit, ujs_per_rute, ujs_per_rit, total_ujs_per_rit, arr_kapasitas_truk)
             '' menentukan nilai pbest
-            menentukan_nilai_pbest(banyak_paus, paus, paus_urutan, total_ujs_per_rit, index_pbest, pbest, paus_terbaik, p, gbest, gbest_urutan, total_ujs_gbest)
+            menentukan_nilai_pbest(banyak_paus, paus, paus_urutan, total_ujs_per_rit, index_pbest, pbest, paus_terbaik, p, gbest, gbest_urutan, total_ujs_gbest, iterasi + 1, arr_kapasitas_truk)
         Next
 
         kesimpulan(gbest_urutan, jarak_per_rute, jarak_per_rit, ujs_per_rute, ujs_per_rit, total_ujs_per_rit)
@@ -61,6 +75,15 @@
         Return dt_hasil
 
     End Function
+
+    Private Sub inisialisasi_tabel_optimalisasi()
+        dt_optimalisasi = New DataTable
+        dt_optimalisasi.Columns.Add("Iterasi")
+        For i = 0 To dt.Rows.Count - 1
+            dt_optimalisasi.Columns.Add($"Rute Ke-{i + 1}")
+        Next
+        dt_optimalisasi.Columns.Add("Total UJS")
+    End Sub
 
     Private Sub generate_bil_random(banyak_paus As Integer, ByRef bil_random(,) As Double)
         Randomize()
@@ -103,11 +126,52 @@
                 Next
             Next
         Next
-        Console.WriteLine("(" & String.Join(",", paus_urutan) & ")")
         Return paus_urutan
     End Function
 
-    Private Sub evaluasi_fungsi_tujuan(banyak_paus As Integer, ByVal paus(,) As Double, ByRef paus_urutan(,) As Double, jarak_per_rute(,,) As Double, jarak_per_rit(,) As Double, ujs_per_rute(,,) As Double, ujs_per_rit(,) As Double, ByRef total_ujs_per_rit(,) As Double)
+    Private Function acak_urutan_truk_standby()
+        Dim random(list_kapasitas_truk.Count), urutan(list_kapasitas_truk.Count) As Double
+        Dim temp As Double
+
+        list_kapasitas_truk_long = New List(Of Integer)
+        Dim a As Integer = dt.Rows.Count
+        Dim b As Integer = 0
+        While (a > 0)
+            If a >= list_kapasitas_truk.Count Then
+                b = list_kapasitas_truk.Count
+            Else
+                b = a
+            End If
+
+            For i = 0 To list_kapasitas_truk.Count - 1
+                random(i) = Rnd()
+                urutan(i) = random(i)
+            Next
+
+            For i = 0 To list_kapasitas_truk.Count - 1
+                For j = 0 To list_kapasitas_truk.Count - 1
+                    If urutan(i) < urutan(j) Then
+                        temp = urutan(i)
+                        urutan(i) = urutan(j)
+                        urutan(j) = temp
+                    End If
+                Next
+            Next
+
+            For i = 0 To b-1
+                For j = 0 To list_kapasitas_truk.Count - 1
+                    If random(i) = urutan(j) Then
+                        list_kapasitas_truk_long.Add(list_kapasitas_truk_copy(j))
+                    End If
+                Next
+            Next
+
+            a -= b
+        End While
+
+    End Function
+
+    Private Sub evaluasi_fungsi_tujuan(banyak_paus As Integer, ByVal paus(,) As Double, ByRef paus_urutan(,) As Double, jarak_per_rute(,,) As Double, jarak_per_rit(,) As Double, ujs_per_rute(,,) As Double, ujs_per_rit(,) As Double, ByRef total_ujs_per_rit(,) As Double, ByRef arr_kapasitas_truk(,) As Double)
         Dim rute_ke, qty, actual_qty, index_awal, index_akhir As Integer
         '' mengurutkan bilangan random
 
@@ -138,8 +202,16 @@
             qty = 0
             index_awal = 0
             index_akhir = 0
+            acak_urutan_truk_standby()
 
             For j = 0 To dt.Rows.Count - 1
+                arr_kapasitas_truk(i, j) = list_kapasitas_truk_long(j)
+            Next
+
+            For j = 0 To dt.Rows.Count - 1
+
+                max_qty = list_kapasitas_truk_long(rute_ke)
+
                 qty += CInt(dt(paus_urutan(i, j))("QTY"))
 
                 If qty > max_qty Or j = (dt.Rows.Count - 1) Then
@@ -252,7 +324,7 @@
                     '    dt_hasil.Rows.InsertAt(dr_hasil, 0)
                     'Next
 
-                    '''kosongan kembali ke gudang
+                    ''kosongan kembali ke gudang
                     'dr_hasil = dt_hasil.NewRow
                     'dr_hasil("PAUS") = i
                     'dr_hasil("NO") = ""
@@ -288,7 +360,6 @@
         Dim rute_ke, qty, actual_qty, index_awal, index_akhir As Integer
         '' mengurutkan bilangan random
 
-
         dt_hasil = New DataTable
         dt_hasil.Columns.Add("PAUS")
         dt_hasil.Columns.Add("RUTE")
@@ -307,6 +378,9 @@
         dt_hasil.Columns.Add("UJS")
         dt_hasil.Columns.Add("SUM JARAK")
         dt_hasil.Columns.Add("SUM UJS")
+        dt_hasil.Columns.Add("UPAH MULTITRIP")
+        dt_hasil.Columns.Add("UPAH TUNGGU")
+        dt_hasil.Columns.Add("UPAH KULI PEMERATAAN")
         dt_hasil.Columns.Add("TAMBAHAN MULTITRIP")
         dt_hasil.Columns.Add("TOTAL UJS")
 
@@ -317,6 +391,8 @@
             index_akhir = 0
 
             For j = 0 To dt.Rows.Count - 1
+                max_qty = list_kapasitas_truk_gbest(rute_ke)
+
                 qty += CInt(dt(gbest_urutan(j))("QTY"))
 
                 If qty > max_qty Or j = (dt.Rows.Count - 1) Then
@@ -377,12 +453,13 @@
                     Dim ujs_multitrip As Double = 0
                     Dim ujs_onetrip As Double = 0
                     Dim upah_multi_trip As Double = 0
+                    Dim upah_multi_trip_per_rute As Double = 2200
                     Dim tambahan_multi_trip As Double = 0
                     Dim upah_tunggu As Double = 1.5 * 11000
                     Dim upah_kuli_pemerataan As Double = 10000
 
                     If (j - index_awal) > 1 Then
-                        upah_multi_trip = (j - index_awal) * 2200
+                        upah_multi_trip = (j - index_awal) * upah_multi_trip_per_rute
                         ujs_multitrip = Math.Ceiling((upah_multi_trip + upah_tunggu + upah_kuli_pemerataan + ujs_per_rit(i, rute_ke)) / 1000) * 1000
                         If dr.Count > 0 Then
                             ujs_onetrip = Math.Ceiling((upah_tunggu + upah_kuli_pemerataan + dr(0)("0") + dr(0)("200")) / 1000) * 1000
@@ -414,10 +491,21 @@
                         dr_hasil("TOTAL QTY") = actual_qty
                         dr_hasil("JARAK") = jarak_per_rute(i, rute_ke, k)
                         dr_hasil("UJS") = ujs_per_rute(i, rute_ke, k)
-                        dr_hasil("SUM JARAK") = jarak_per_rit(i, rute_ke)
-                        dr_hasil("SUM UJS") = ujs_per_rit(i, rute_ke)
-                        dr_hasil("TAMBAHAN MULTITRIP") = tambahan_multi_trip
-                        dr_hasil("TOTAL UJS") = total_ujs_per_rit(i, rute_ke)
+
+                        If (index_akhir - index_awal) > 0 Then
+                            dr_hasil("UPAH MULTITRIP") = upah_multi_trip_per_rute
+                        End If
+
+                        If k = index_awal Then
+                            dr_hasil("SUM JARAK") = jarak_per_rit(i, rute_ke)
+                            dr_hasil("SUM UJS") = ujs_per_rit(i, rute_ke)
+
+                            dr_hasil("UPAH TUNGGU") = upah_tunggu
+                            dr_hasil("UPAH KULI PEMERATAAN") = upah_kuli_pemerataan
+
+                            dr_hasil("TAMBAHAN MULTITRIP") = tambahan_multi_trip
+                            dr_hasil("TOTAL UJS") = total_ujs_per_rit(i, rute_ke)
+                        End If
 
                         If k = index_awal Then
                             dr_hasil("ASAL") = "Pamekasan-Gudang Pamekasan-"
@@ -447,10 +535,10 @@
                     dr_hasil("TUJUAN") = "Pamekasan-Gudang Pamekasan-"
                     dr_hasil("JARAK") = jarak_per_rute(i, rute_ke, j)
                     dr_hasil("UJS") = ujs_per_rute(i, rute_ke, j)
-                    dr_hasil("SUM JARAK") = jarak_per_rit(i, rute_ke)
-                    dr_hasil("SUM UJS") = ujs_per_rit(i, rute_ke)
-                    dr_hasil("TAMBAHAN MULTITRIP") = tambahan_multi_trip
-                    dr_hasil("TOTAL UJS") = total_ujs_per_rit(i, rute_ke)
+                    'dr_hasil("SUM JARAK") = jarak_per_rit(i, rute_ke)
+                    'dr_hasil("SUM UJS") = ujs_per_rit(i, rute_ke)
+                    'dr_hasil("TAMBAHAN MULTITRIP") = tambahan_multi_trip
+                    ''dr_hasil("TOTAL UJS") = total_ujs_per_rit(i, rute_ke)
                     dt_hasil.Rows.InsertAt(dr_hasil, 0)
 
                     If j < (dt.Rows.Count - 1) Then
@@ -463,7 +551,7 @@
         Next
     End Sub
 
-    Private Sub menentukan_nilai_pbest(banyak_paus As Integer, ByVal paus(,) As Double, ByVal paus_urutan(,) As Double, total_ujs_per_rit(,) As Double, ByRef index_pbest As Integer, ByRef pbest As Double, ByRef paus_terbaik() As Double, ByRef p() As Double, ByRef gbest() As Double, ByRef gbest_urutan() As Double, ByRef total_ujs_gbest As Double)
+    Private Sub menentukan_nilai_pbest(banyak_paus As Integer, ByVal paus(,) As Double, ByVal paus_urutan(,) As Double, total_ujs_per_rit(,) As Double, ByRef index_pbest As Integer, ByRef pbest As Double, ByRef paus_terbaik() As Double, ByRef p() As Double, ByRef gbest() As Double, ByRef gbest_urutan() As Double, ByRef total_ujs_gbest As Double, ByVal iterasi As Integer, ByVal arr_kapasitas_truk(,) As Double)
         Dim total_ujs As Double
         Dim p_terbaik As Double = 1
         Dim index_terbaik_p As Integer
@@ -508,17 +596,44 @@
 
         If total_ujs_gbest = 0 Then
             total_ujs_gbest = pbest
+
+            list_kapasitas_truk_gbest = New List(Of Integer)
+            For i = 0 To dt.Rows.Count - 1
+                list_kapasitas_truk_gbest.Add(arr_kapasitas_truk(index_pbest, i))
+            Next
+
+            Dim dr_optimalisasi As DataRow
+            dr_optimalisasi = dt_optimalisasi.NewRow
+            dr_optimalisasi("Iterasi") = iterasi
+            dr_optimalisasi("Total UJS") = total_ujs_gbest
+
             For i = 0 To dt.Rows.Count - 1
                 gbest(i) = paus(index_pbest, i)
                 gbest_urutan(i) = paus_urutan(index_pbest, i)
+
+                dr_optimalisasi($"Rute Ke-{i + 1}") = gbest_urutan(i)
             Next
+            dt_optimalisasi.Rows.InsertAt(dr_optimalisasi, 0)
         Else
             If pbest < total_ujs_gbest Then
                 total_ujs_gbest = pbest
+
+                list_kapasitas_truk_gbest = New List(Of Integer)
+                For i = 0 To dt.Rows.Count - 1
+                    list_kapasitas_truk_gbest.Add(arr_kapasitas_truk(index_pbest, i))
+                Next
+
+                Dim dr_optimalisasi As DataRow
+                dr_optimalisasi = dt_optimalisasi.NewRow
+                dr_optimalisasi("Iterasi") = iterasi
+                dr_optimalisasi("Total UJS") = total_ujs_gbest
                 For i = 0 To dt.Rows.Count - 1
                     gbest(i) = paus(index_pbest, i)
                     gbest_urutan(i) = paus_urutan(index_pbest, i)
+
+                    dr_optimalisasi($"Rute Ke-{i + 1}") = gbest_urutan(i)
                 Next
+                dt_optimalisasi.Rows.InsertAt(dr_optimalisasi, 0)
             End If
         End If
     End Sub

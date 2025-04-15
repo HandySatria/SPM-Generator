@@ -21,7 +21,7 @@ Public Class HasilForm
                 Dim ExcelSheet1 As New Object
 
                 ExcelApp = CreateObject("Excel.Application")
-                ExcelBook = ExcelApp.WorkBooks.open(Application.StartupPath & $"\Template {index_akhir - index_awal} Trip.xlsx")
+                ExcelBook = ExcelApp.WorkBooks.open(Application.StartupPath & $"\Template\Template {index_akhir - index_awal} Trip.xlsx")
 
                 ExcelSheet1 = ExcelBook.WorkSheets(1)
                 Dim tanggal_order As String = ""
@@ -87,7 +87,6 @@ Public Class HasilForm
                     .cells(21 + (rute_ke + 6), 4) = Format(Date.Now, "dd-MMM-yyyy").ToString
 
                 End With
-
 
                 Dim filename As String = $"{GridView1.GetRowCellValue(index_awal, "RUTE")} RIMA PAMEKASAN {Format(Date.Now, "MM yyyy")} SDO {sdo_no}.xlsx"
                 Dim outputPath As String = Path.Combine(folderPath, filename)
